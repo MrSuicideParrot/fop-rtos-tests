@@ -1,0 +1,29 @@
+build-idx:
+  generated-by: csolution version 2.8.0
+  description: Blinky example
+  cdefault: cdefault.yml
+  csolution: Blinky.csolution.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: Blinky/Blinky.cproject.yml
+  cbuilds:
+    - cbuild: build/MPS3_FVP/GCC/Debug/Blinky/Blinky.Debug+MPS3_FVP.cbuild.yml
+      project: Blinky
+      configuration: .Debug+MPS3_FVP
+      errors: true
+      messages:
+        errors:
+          - "no component was found with identifier 'Compiler:CORE'\n  did you mean 'CMSIS-Compiler:CORE'?"
+          - "no component was found with identifier 'Compiler:STDOUT:Custom'\n  did you mean 'CMSIS-Compiler:STDOUT:Custom'?"
+          - processing context 'Blinky.Debug+MPS3_FVP' failed
+        warnings:
+          - "Blinky.csolution.yml - solution created for unknown tool: ARM::V2M_MPS3_SSE_310_BSP@1.4.0"
+          - "'compiler' setting in cdefault.yml will be deprecated in CMSIS-Toolbox 3.0.0"
+          - no compiler registered for 'GCC'. Add path to compiler 'bin' directory with environment variable GCC_TOOLCHAIN_<major>_<minor>_<patch>
+          - customization of intermediate directory 'intdir' is ignored by the cbuild2cmake backend
+          - "Blinky.cproject.yml - dependency validation for context 'Blinky.Debug+MPS3_FVP' failed:\nSELECTABLE ARM::Device:USART Retarget@1.0.0\n  require CMSIS-Compiler:STDOUT:Custom"
+        info:
+          - Blinky.cbuild-pack.yml - file is already up-to-date
+          - Blinky.Debug+MPS3_FVP.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-Compiler@2.0.0
