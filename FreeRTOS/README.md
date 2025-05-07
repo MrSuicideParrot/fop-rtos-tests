@@ -1,0 +1,1 @@
+Firmware produced on e2 studio 2024-04 and compiled with GNU ARM Embedded 13.2.1.arm-13-7.
